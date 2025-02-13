@@ -1,0 +1,32 @@
+@use "./variables" as *;
+@use "./typography" as *;
+
+@mixin tablet {
+    @media screen and (min-width: $tablet-screen) {
+      @content;
+    }
+  }
+  @mixin desktop {
+    @media screen and (min-width: $desktop-screen) {
+      @content;
+    }
+  }
+@mixin header {
+    font-weight: 500;
+    font-size: 1.25rem;
+}
+
+@mixin subheader {
+    font-weight: 400;
+    font-size: 1.15rem;
+}
+
+@mixin copy--regular {
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+@mixin copy--small {
+    font-weight: 400;
+    font-size: 0.875rem;
+}
