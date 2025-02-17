@@ -1,5 +1,6 @@
 import Header from "../../components/Header";
 import "./Homepage.scss";
+import computerIcon from "../../assets/icons/computer-icon.svg"
 
 export default function Homepage() {
   return (
@@ -14,16 +15,17 @@ export default function Homepage() {
             className="homepage__input"
             type="text"
             name=""
-            value={""}
-            onChange={""}
+            placeholder="Search for topics you want to learn"
+            // value={""}
+            // onChange={""}
           />
         </form>
-        <ul className="homepage__tiles-container">
-          <li className="homepage__tile">
-            <img />
+        <div className="homepage__tiles-container">
+          <div className="homepage__tile">
+            <img src={computerIcon} alt="computer icon"/>
             <p>Coding</p>
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
     </section>
   );
