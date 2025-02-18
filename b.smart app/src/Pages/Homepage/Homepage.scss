@@ -41,6 +41,9 @@
 
     &__tiles-container {
         padding-top: 2rem;
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
     }
 
     &__tile {
@@ -52,6 +55,11 @@
         border-radius: 25px;
         color: $copy-weak;
         border: 1px solid $light-green;
+        height: fit-content;
+    }
+
+    &__tile--icon {
+        height: 1.1rem;
     }
 
 }

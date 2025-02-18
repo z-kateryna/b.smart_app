@@ -1,8 +1,24 @@
 import Header from "../../components/Header";
 import "./Homepage.scss";
-import computerIcon from "../../assets/icons/computer-icon.svg"
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 export default function Homepage() {
+  const [topics, setTopics] = useState([]);
+
+  const getAllTopics = async () => {
+    try {
+      const allTopicsResponse = await axios.get(`http://localhost:8080/topics`);
+      setTopics(allTopicsResponse.data);
+    } catch(error) {
+      console.error("no topics were found", error);
+    }
+  }
+
+  useEffect(() => {
+    getAllTopics();
+  }, []);
+
   return (
     <section className="homepage">
       <Header />
@@ -21,10 +37,14 @@ export default function Homepage() {
           />
         </form>
         <div className="homepage__tiles-container">
-          <div className="homepage__tile">
-            <img src={computerIcon} alt="computer icon"/>
-            <p>Coding</p>
-          </div>
+          {topics.map((topic) => {
+            return (
+              <div className="homepage__tile" key={topic.id}> {/* Ensure you have a unique key */}
+                <img src={topic.icon} alt={`${topic.name} icon`} className="homepage__tile--icon" />
+                <p>{topic.name}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
