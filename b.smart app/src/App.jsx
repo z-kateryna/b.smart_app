@@ -10,7 +10,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Homepage />}/>
-        <Route path="/subtopic" element={<ChooseSubtopicPage />}/>
+        <Route path="/choose-subtopic" element={<ChooseSubtopicPage />}/>
         <Route path="/feed" element={<FeedPage />}/>
       </Routes>
     </BrowserRouter>
