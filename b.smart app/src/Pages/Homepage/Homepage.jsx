@@ -38,7 +38,7 @@ export default function Homepage() {
     try {
       const response = await axios.post(`${url}/api/openai`, { topic: topic.name });
       const subtopicsData = response.data;
-      setSubtopics(subtopicsData); // Set the subtopics
+      setSubtopics(subtopicsData); 
   
       console.log("Subtopics received from API:", subtopicsData);
   

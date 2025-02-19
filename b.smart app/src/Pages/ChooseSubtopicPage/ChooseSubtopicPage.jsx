@@ -7,24 +7,33 @@ export default function ChooseSubtopicPage() {
   const subtopics = location.state?.subtopics || [];
   console.log("Subtopics from state:", subtopics);
 
+  const firstSubtopic = subtopics.subtopics.find(subtopic => subtopic);
+
   return (
     <section className="subtopics-page">
       <Header />
       <div className="subtopics-page__wrapper">
         <form className="subtopics-page__form">
-          <label className="subtopics-page__label">
-            Choose what you want to learn about
+          <label className="subtopics-page__label" key={firstSubtopic.id} >
+            {`Great choice! ${firstSubtopic.topic} has so much to offer. What interests you in particular?`}
           </label>
           <input
             className="subtopics-page__input"
             type="text"
-            placeholder="Search for subtopics you want to learn"
+            placeholder="Search for what interests you"
           />
+          <div className="subtopics-page__level-container">
+            <div className="subtopics-page__level--default  subtopics-page__level--active">
+              Beginner
+            </div>
+            <div className="subtopics-page__level--default">"Intermediate</div>
+            <div className="subtopics-page__level--default">Advanced</div>
+          </div>
         </form>
         <div className="subtopics-page__tiles-container">
           {subtopics.subtopics.length > 0 ? (
             subtopics.subtopics.map((subtopic) => {
-              console.log("Rendering subtopic:", subtopic); 
+              console.log("Rendering subtopic:", subtopic);
               return (
                 <div key={subtopic.id} className="subtopics-page__tile">
                   {subtopic.name}

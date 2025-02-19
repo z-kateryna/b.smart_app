@@ -39,6 +39,30 @@
       font-weight: 600;
       font-size: 1.25rem;
       padding-bottom: 0.75rem;
+
+      @include desktop {
+        text-align: center;
+      }
+    }
+
+    &__level-container {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1rem;
+      justify-content: center;
+    }
+
+    &__level--default {
+      background-color: $grey-bkg;
+      padding: 0.25rem 0.5rem;
+      border: 1px solid $border;
+      border-radius: 20px;
+      color: $border;
+    }
+
+    &__level--active {
+      color: $copy-weak;
+      border: 1px solid $copy-weak;
     }
   
     &__input {
