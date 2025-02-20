@@ -1,13 +1,35 @@
 import Header from "../../components/Header";
 import "./ChooseSubtopicPage.scss";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
+
+const url = import.meta.env.VITE_API_URL; 
 
 export default function ChooseSubtopicPage() {
   const location = useLocation();
   const subtopics = location.state?.subtopics || [];
-  console.log("Subtopics from state:", subtopics);
+  const [learningMaterials, setLearningMaterials] = useState([]);
+  const navigate = useNavigate();  
+  // console.log("Subtopics from state:", subtopics);
 
   const firstSubtopic = subtopics.subtopics.find(subtopic => subtopic);
+
+  const handleOnClick = async (subtopic) => {
+    try {
+      const response = await axios.post(`${url}/api/openai/feed`, { subtopic: subtopic.name });
+      const materialsData = response.data.materials.learningMaterials;  // Correctly access the learningMaterials array
+      setLearningMaterials(materialsData);  // Store it in the state
+      console.log("Learning materials received from API:", materialsData);
+
+      // You may navigate or do other things with the learning materials here.
+      navigate('/feed', { state: { materials: materialsData } });
+
+    } catch (error) {
+      console.error("Error fetching learning materials:", error);
+    }
+  };
+  
 
   return (
     <section className="subtopics-page">
@@ -33,9 +55,9 @@ export default function ChooseSubtopicPage() {
         <div className="subtopics-page__tiles-container">
           {subtopics.subtopics.length > 0 ? (
             subtopics.subtopics.map((subtopic) => {
-              console.log("Rendering subtopic:", subtopic);
+              // console.log("Rendering subtopic:", subtopic);
               return (
-                <div key={subtopic.id} className="subtopics-page__tile">
+                <div key={subtopic.id} className="subtopics-page__tile" onClick={() => handleOnClick(subtopic)}>
                   {subtopic.name}
                 </div>
               );

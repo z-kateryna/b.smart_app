@@ -16,7 +16,7 @@ export default function Homepage() {
     const getAllTopics = async () => {
       try {
         const response = await axios.get(`${url}/topics`);
-        console.log("Topics Response:", response.data);
+        // console.log("Topics Response:", response.data);
         setTopics(response.data);
       } catch (error) {
         console.error("Error fetching topics:", error);
@@ -40,7 +40,7 @@ export default function Homepage() {
       const subtopicsData = response.data;
       setSubtopics(subtopicsData); 
   
-      console.log("Subtopics received from API:", subtopicsData);
+      // console.log("Subtopics received from API:", subtopicsData);
   
       navigate('/choose-subtopic', {
         state: { subtopics: subtopicsData }
