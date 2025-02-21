@@ -58,7 +58,7 @@
 
     &__level--default {
       background-color: $grey-bkg;
-      padding: 0.25rem 0.5rem;
+      padding: 0.25rem 0.75rem;
       border: 1px solid $border;
       border-radius: 20px;
       color: $border;
@@ -102,5 +102,18 @@
         padding: 0.75rem 1rem;
         border-radius: 25px;
         border: 1px solid $light-green;
+
+        &:active {
+          background-color: $selected-bkg;
+          border: 1px solid $dark-green;
+        }
+
+        @include desktop {
+          &:hover {
+            background-color: $dark-bkg;
+            border: 1px solid $dark-green;
+            box-shadow: 1px 0px 16px -7px rgba(17, 199, 89, 1);
+          }
+          }
     }
 }

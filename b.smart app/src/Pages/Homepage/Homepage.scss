@@ -83,6 +83,20 @@
     color: $copy-weak;
     border: 1px solid $light-green;
     height: fit-content;
+
+    &:active {
+      background-color: $selected-bkg;
+      border: 1px solid $dark-green;
+    }
+
+    @include desktop {
+      &:hover {
+        background-color: $dark-bkg;
+        border: 1px solid $dark-green;
+        box-shadow: 1px 0px 16px -7px rgba(17, 199, 89, 1);
+      }
+    }
+
   }
 
   &__icon {

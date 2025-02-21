@@ -23,6 +23,15 @@
           }
   }
 
+  &__logo {
+    display: flex;
+    align-items: center;
+  }
+
+  &__img {
+    height: 1.25rem;
+  }
+
   &__avatar {
     background-image: url("../assets/images/Final picture for portfolio.png");
     background-size: cover;

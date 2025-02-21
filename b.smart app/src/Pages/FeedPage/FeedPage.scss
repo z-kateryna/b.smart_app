@@ -5,8 +5,7 @@
 .feed {
     display: flex;
     flex-direction: column;
-    background-color: $light-bkg;
-    height: 100vh;
+    background-color: #F5FAF7;
 
         &__wrapper {
             margin-top: 1rem;
@@ -30,18 +29,22 @@
           &__card-container {
             display: flex;
             flex-direction: column;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2.5rem;
           }
 
           &__card {
             height: 200px;
             // width: 100%;
             background-color: white;
-            border: 1px solid $selected-bkg;
+            border: 1px solid #E8EFE8;
             border-radius: 12px;
             display: flex;
             justify-content: center;
             align-items: center;
+            padding: 3rem 6rem;
+            font-size: 18px;
+            text-align: center;
+            line-height: 1.3;
           }
 
           &__icons-container {
