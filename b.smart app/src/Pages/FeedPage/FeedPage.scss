@@ -1,0 +1,86 @@
+@use "../../assets/styles/partials/mixins" as *;
+@use "../../assets/styles/partials/typography" as *;
+@use "../../assets/styles/partials/variables" as *;
+
+.feed {
+    display: flex;
+    flex-direction: column;
+    background-color: #F5FAF7;
+
+        &__wrapper {
+            margin-top: 1rem;
+            display: flex;
+            flex-direction: column;
+            padding: 1rem;
+            width: 100%;
+        
+            @include tablet {
+              padding-left: 2rem;
+              padding-right: 2rem;
+            }
+        
+            @include desktop {
+              padding-top: 2rem;
+              margin: 0 auto;
+              max-width: 1020px;
+            }
+          }
+
+          &__card-container {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 2.5rem;
+          }
+
+          &__card {
+            height: 200px;
+            // width: 100%;
+            background-color: white;
+            border: 1px solid #E8EFE8;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 3rem 6rem;
+            font-size: 18px;
+            text-align: center;
+            line-height: 1.3;
+          }
+
+          &__icons-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 0.5rem;
+          }
+
+          &__container--left {
+            display: flex;
+            align-items: center;
+          }
+
+          &__container--right {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+          }
+
+          &__icon--left {
+            height: 20px;
+            margin-left: 0.25rem;
+            margin-bottom: 0.25rem;
+          }
+
+          &__icon--right {
+            height: 20px;
+            margin-right: 0.25rem;
+            margin-top: 0.25rem;
+          }
+
+          &__copy {
+            color: $copy-weak;
+          }
+    
+
+
+}

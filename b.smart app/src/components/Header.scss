@@ -3,24 +3,43 @@
 @use "../assets/styles/partials/variables" as *;
 
 .nav {
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+
+  &__wrapper {
     display: flex;
     justify-content: space-between;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
     padding: 1rem;
-    background-color: white; 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 
-    &__avatar {
-        background-image: url("../assets/images/Final picture for portfolio.png");
-        background-size: cover;
-        background-position: center;
-        width: 2rem;
-        height: 2rem;
-        border-radius: 50%;
-        border: 1px solid $grey-bkg;
-        filter: drop-shadow(0px 0px 1px #bfc0c4);
-    }
+    @include tablet {
+            padding-left: 2rem;
+            padding-right: 2rem;
+          }
+        
+          @include desktop {
+            margin: 0 auto;
+            max-width: 1020px;
+          }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+  }
+
+  &__img {
+    height: 1.25rem;
+  }
+
+  &__avatar {
+    background-image: url("../assets/images/Final picture for portfolio.png");
+    background-size: cover;
+    background-position: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 1px solid $grey-bkg;
+    filter: drop-shadow(0px 0px 1px #bfc0c4);
+  }
 }

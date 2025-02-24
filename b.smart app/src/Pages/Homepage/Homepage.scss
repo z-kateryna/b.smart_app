@@ -1,0 +1,109 @@
+@use "../../assets/styles/partials/mixins" as *;
+@use "../../assets/styles/partials/typography" as *;
+@use "../../assets/styles/partials/variables" as *;
+
+.homepage {
+  display: flex;
+  flex-direction: column;
+
+  &__wrapper {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+
+    @include tablet {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    @include desktop {
+      padding-top: 2rem;
+      margin: 0 auto;
+      max-width: 1020px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @include desktop {
+      margin: 0 auto;
+      width: 365px;
+    }
+  }
+
+  &__label {
+    font-weight: 600;
+    font-size: 1.25rem;
+    padding-bottom: 0.75rem;
+
+    @include desktop {
+      text-align: center;
+    }
+  }
+
+  &__input {
+    font-family: "Urbanist", sans-serif;
+    color: $copy-weak;
+    opacity: 60%;
+    font-size: 1rem;
+    padding-left: 0.5rem;
+    height: 2.75rem;
+    border: 1px solid $border;
+    border-radius: 4px;
+    background-image: url(../../assets/icons/Search-2.svg);
+    background-repeat: no-repeat;
+    background-position: calc(100% - 1rem) center;
+
+    &:focus {
+      outline: none;
+      border: 1px solid $copy-weak;
+      color: $copy-weak;
+      opacity: 100%;
+    }
+  }
+
+  &__tiles-container {
+    padding-top: 2rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  &__tile {
+    display: flex;
+    gap: 0.5rem;
+    background-color: $mid-bkg;
+    width: fit-content;
+    padding: 0.75rem 1rem;
+    border-radius: 25px;
+    color: $copy-weak;
+    border: 1px solid $light-green;
+    height: fit-content;
+
+    &:active {
+      background-color: $selected-bkg;
+      border: 1px solid $dark-green;
+    }
+
+    @include desktop {
+      &:hover {
+        background-color: $dark-bkg;
+        border: 1px solid $dark-green;
+        box-shadow: 1px 0px 16px -7px rgba(17, 199, 89, 1);
+      }
+    }
+  }
+
+  &__icon {
+    height: 1.1rem;
+  }
+
+  &__copy--error {
+    font-size: 1rem;
+    padding: 1rem 0;
+  }
+}
