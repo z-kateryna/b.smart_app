@@ -30,8 +30,8 @@
     width: 100%;
 
     @include desktop {
-        margin: 0 auto;
-        width: 365px;
+      margin: 0 auto;
+      width: 365px;
     }
   }
 
@@ -96,10 +96,14 @@
         box-shadow: 1px 0px 16px -7px rgba(17, 199, 89, 1);
       }
     }
-
   }
 
   &__icon {
     height: 1.1rem;
+  }
+
+  &__copy--error {
+    font-size: 1rem;
+    padding: 1rem 0;
   }
 }
